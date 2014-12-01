@@ -3,23 +3,15 @@
 
 // Helper function to display JavaScript value on HTML page.
 function showResponse(response) 
-{var responseString = JSON.stringify(response, '', 2);
+{
+    var responseString = JSON.stringify(response, '', 2);
     var nodeObject = JSON.parse(responseString);
     console.log(nodeObject);
     var test = nodeObject.items[0];
     console.log(test);
 
-            $.getJSON('https://gdata.youtube.com/feeds/api/videos?q=googledevelopers&max-re‌​sults=5&v=2&alt=jsonc&orderby=published', function(data) {
-    console.log(data);
-    for(var i=0; i<data.data.items.length; i++) 
-    {
-       console.log(data.data.items[i].title); // title
-       console.log(data.data.items[i].description); // description
-       console.log(data.data.items[i].default); //url link
-    }
-
 }
-
+{
     document.getElementById('response').innerHTML += responseString;
 }
 
